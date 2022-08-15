@@ -7,7 +7,7 @@ const ButtonStyled = styled.input`
   color: white;
   border: 0;
   padding: 15px 20px;
-  min-width: 150px;
+  width: 100%;
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;

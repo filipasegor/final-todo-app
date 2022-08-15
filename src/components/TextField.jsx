@@ -8,6 +8,7 @@ const StyledTexField = styled.input`
   border: 1px solid var(--light-gray);
   font-size: 16px;
   margin: ${({margin}) => margin || "0px" };
+  align-self: stretch;
 
   &:focus{
     outline: 1px solid #262626;

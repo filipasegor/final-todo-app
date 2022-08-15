@@ -8,19 +8,16 @@ const TitleTask = styled.h2`
   font-weight: 500;
 `
 
+const Description = styled.p`
+  font-size: 25px;
+  line-height: 120%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+`
 const DateWraper = styled.div`
   display: flex;
   justify-content: flex-end;
-`
-
-
-const Description = styled.p`
-  line-height: 120%;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 120%;
-  color: #00000066;
-  margin: 15px 0px;
 `
 
 const DateText = styled.p`
@@ -56,8 +53,14 @@ const ButtonWraper = styled.div`
   align-items: flex-start;
   justify-content: space-between;
 `
+const Date = styled.p`
+  line-height: 120%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+`
 
-export default function Task(props) {
+export default function DoneTask(props) {
 
   const {info} = props;
 
@@ -68,17 +71,20 @@ export default function Task(props) {
           <div>
             <TitleTask>{info.task}</TitleTask>
             <Description>{info.description}</Description>
+            <Date>{info.date}</Date>
           </div>
           <ButtonWraper className="button-wraper">
             <SecondaryButton
-              onClick={props.onDoneClick}>
+              backgroundColor={props.backgroundColor}
+              color={props.color}
+              border={props.border}
+              onClick={props.onUnDoneClick}>
               <ion-icon name="checkmark-sharp"></ion-icon>
-            </SecondaryButton>
-
+              </SecondaryButton>
             <SecondaryButton
-              onClick={props.onDeleteClick}>
-              <ion-icon name="trash-outline">
-              </ion-icon>
+                onClick={props.onDeleteDoneClick}>
+                <ion-icon name="trash-outline">
+                </ion-icon>
             </SecondaryButton>
           </ButtonWraper>
         </TaskWraper>
