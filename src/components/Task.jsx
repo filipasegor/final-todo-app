@@ -84,10 +84,7 @@ export default function Task(props) {
         </TaskWraper>
         <DateWraper>
           <DateText>Дедлайн через: </DateText>
-          <DateText>{info.day} дней</DateText>
-          <DateText>{info.hour} часов</DateText>
-          <DateText>{info.minute} минут</DateText>
-          <DateText>{info.second} секунд</DateText>
+          <DateText>{info.setTime}</DateText>
         </DateWraper>
       </TaskWraperInner>
     </>

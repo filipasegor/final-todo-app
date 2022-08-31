@@ -12,7 +12,7 @@ const ButtonStyled = styled.input`
   border-radius: 10px;
   cursor: pointer;
   transition: opacity 200ms ease-out;
-  background: #148F2B;
+  background: #0170F2;
   margin: ${({margin}) => margin || "0px" };
 
   &:hover{

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledSecondaryButton = styled.button`
   padding: 10px;
   margin: 0px 10px;
-  background-color: ${props => props.backgroundColor || "#FFFFFF"};
+  background-color: ${props => props.backgroundColor || "#F4F4F4"};
   border: ${props => props.border || "1.5px solid #000000" };
   border-radius: 5px;
   text-align: center;

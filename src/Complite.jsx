@@ -50,6 +50,7 @@ const TaskWraperInner = styled.div`
   padding-bottom: 15px;
 
 `
+
 const ButtonWraper = styled.div`
   display: flex;
   flex-wrap: nowrap;
@@ -58,19 +59,10 @@ const ButtonWraper = styled.div`
 `
 
 
-export default function Todo(props){
+export default function Complite(props){
 
-  const { name, desc, totalSecs } = props.todo;
+  const { name, desc, totalSecs } = props.complitie;
   const [time, setTime] = useState(totalSecs);
-
-  // const [time, setTime] = useState((totalSecs) => {
-  //   const savedTime = localStorage.getItem("time");
-  //   if(savedTime){
-  //     return JSON.parse(savedTime);
-  //   } else {
-  //     return [];
-  //   }
-  // });
 
   useEffect(() => {
     let timer = setInterval(() => {
@@ -84,28 +76,23 @@ export default function Todo(props){
     return () => clearInterval(timer);
   }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("time", JSON.stringify(time));
-  // }, [time]);
-
-
-
   const days = Math.floor(time / (1000 * 60 * 60 * 24));
   const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((time % (1000 * 60)) / 1000);
 
-  const timeDisplay = (
-    <p>
-      {days}дн:
-      {hours}
-      ч:
-      {minutes}
-      мин:
-      {seconds} сек
-    </p>
-  );
-  const expired = <p>expired</p>;
+  // const timeDisplay = (
+  //   <p>
+  //     Осталось времени:
+  //     {days}дн:
+  //     {hours}
+  //     ч:
+  //     {minutes}
+  //     мин:
+  //     {seconds} сек
+  //   </p>
+  // );
+  // const expired = <p>expired</p>;
 
   // if (days + hours + minutes + seconds === 0) {
   //   return (
@@ -136,21 +123,28 @@ export default function Todo(props){
           </div>
           <ButtonWraper className="button-wraper">
             <SecondaryButton
-              onClick={() => props.onDoneClick(props.todo.id)}>
+              border={!props.completedTasks && "1.5px solid #148F2B"}
+              color={!props.completedTasks && "#FFFFFF"}
+              backgroundColor={!props.completedTasks && "#148F2B"}
+              onClick={() => props.onUnDoneClick(props.complitie.id)}>
               <ion-icon name="checkmark-sharp"></ion-icon>
             </SecondaryButton>
 
             <SecondaryButton
-              onClick={() => props.onDeleteClick(props.todo.id)}>
+              onClick={() => props.onDeleteDoneClick(props.complitie.id)}>
               <ion-icon name="trash-outline">
               </ion-icon>
             </SecondaryButton>
           </ButtonWraper>
+
         </TaskWraper>
         <DateWraper>
           <DateText>Дедлайн через: </DateText>
           <DateText>
-          {days + hours + minutes + seconds === 0 ? expired : timeDisplay }
+          {days} дней
+          {hours} часов
+          {minutes} мин
+          {seconds} сек
           </DateText>
         </DateWraper>
       </TaskWraperInner>

@@ -1,10 +1,8 @@
 import React from "react";
-import { render } from "react-dom";
-import Todo from "./Todo.jsx";
+import {render} from "react-dom";
 import "./index.css";
 
-function App() {
-  return <Todo />;
-}
+import App from "./App";
 
-render(<App />, document.querySelector("#root"));
+const root = document.querySelector("#root");
+render(<App />, root);
