@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import styled from "styled-components";
+import GlobalFonts from './fonts/fonts';
 
 import NavigateButton from "./components/NavigateButton.jsx"
 import AddTodo  from "./AddTodo";

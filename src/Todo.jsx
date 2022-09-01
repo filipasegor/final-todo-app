@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import SecondaryButton from "./components/SecondaryButton.jsx"
+import GlobalFonts from './fonts/fonts.js';
 
 const TitleTask = styled.h2`
+  font-family: "Rooftop-Regular";
   font-size: 25px;
   line-height: 120%;
   font-weight: 500;
@@ -87,7 +89,6 @@ export default function Todo(props){
   // useEffect(() => {
   //   localStorage.setItem("time", JSON.stringify(time));
   // }, [time]);
-
 
 
   const days = Math.floor(time / (1000 * 60 * 60 * 24));
